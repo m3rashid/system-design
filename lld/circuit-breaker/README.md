@@ -8,14 +8,7 @@
 
 - This prevents the dependent service from being overwhelmed by requests when it is down and allows the microservice to fail fast and return an error to the client.
 
-```mermaid
-graph TD
-		A[Service A] --> C{Circuit Breaker}
-		C -->|Open| D[Error]
-		C -->|Closed| B[Service B]
-		D --> B
-		B --> E{Circuit Breaker}
-		E -->|Open| F[Error]
-		E -->|Closed| A
-		F --> A
-```
+<br />
+
+<img src="./interactions.png" width="350">
+<img src="./flow.png" width="500">
